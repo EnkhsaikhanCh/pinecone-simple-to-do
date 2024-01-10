@@ -10,24 +10,29 @@ const tasks = [
 function render() {
   let taskHTML = ``;
   let index = 0;
+
   while (tasks.length > index) {
     taskHTML =
       taskHTML +
       `
         <div class="task">
-        <span onclick="editTask(${index});">${tasks[index].title}</span>
-        <div class="remove-edit">
-        <i class="fa-solid fa-xmark" onclick="removeTask(${index})"></i>
-        </div>
+            <span onclick="editTask(${index});">${tasks[index].title}</span>
+          <div class="remove-edit">
+            <i class="fa-solid fa-xmark" onclick="removeTask(${index})"></i>
+          </div>
         </div>
         `;
     index = index + 1;
   }
+
   document.getElementById("tasksElement").innerHTML = taskHTML;
 }
 
 function addTask() {
   const title = prompt("Task title:");
+  if (title === null) {
+    return;
+  }
   tasks.push({
     title: title,
   });
