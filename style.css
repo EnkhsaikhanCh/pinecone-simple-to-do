@@ -18,6 +18,11 @@ h3 {
   margin: 20px 10px;
 }
 
+.tasks {
+  display: flex;
+  flex-direction: column;
+}
+
 .task {
   display: flex;
   justify-content: space-between;
@@ -30,6 +35,25 @@ h3 {
 
 .task > span {
   cursor: pointer;
+  flex: auto;
+}
+
+.task-completed > span {
+  text-decoration: line-through;
+}
+
+.task-todo {
+  order: 1;
+}
+
+.task-completed {
+  order: 2;
+}
+
+input {
+  margin: 0 10px 0 0;
+  height: 15px;
+  width: 15px;
 }
 
 .remove-edit {
