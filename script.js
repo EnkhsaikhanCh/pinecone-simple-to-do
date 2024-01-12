@@ -43,7 +43,7 @@ function addTask() {
 }
 
 function removeTask(deleteIndex) {
-  const deleteConfirmed = confirm("Usgah uu?");
+  const deleteConfirmed = confirm("Та устгахдаа итгэлтэй байна уу?");
   if (deleteConfirmed) {
     tasks.splice(deleteIndex, 1);
     render();
